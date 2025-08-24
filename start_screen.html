@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flappy Rocket - Start Screen</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes starfield {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-100vh); }
+        }
+        
+        @keyframes particle-float {
+            0% { 
+                transform: translateY(0px) translateX(0px);
+                opacity: 0.8;
+            }
+            100% { 
+                transform: translateY(-50px) translateX(10px);
+                opacity: 0;
+            }
+        }
+        
+        .floating-rocket {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .starfield-bg {
+            animation: starfield 20s linear infinite;
+        }
+        
+        .particle {
+            animation: particle-float 2s ease-out infinite;
+        }
+        
+        .particle:nth-child(2) { animation-delay: 0.5s; }
+        .particle:nth-child(3) { animation-delay: 1s; }
+        .particle:nth-child(4) { animation-delay: 1.5s; }
+    </style>
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fflappyroc6431back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background font-exo overflow-hidden">
+    <!-- Starfield Background -->
+    <div class="fixed inset-0 z-0">
+        <div class="starfield-bg absolute inset-0 opacity-60">
+            <!-- Stars -->
+            <div class="absolute top-10 left-10 w-1 h-1 bg-primary rounded-full shadow-neon"></div>
+            <div class="absolute top-20 right-20 w-1 h-1 bg-accent rounded-full shadow-neon-accent"></div>
+            <div class="absolute top-32 left-1/4 w-0.5 h-0.5 bg-white rounded-full"></div>
+            <div class="absolute top-40 right-1/3 w-1 h-1 bg-primary-300 rounded-full"></div>
+            <div class="absolute top-52 left-1/2 w-0.5 h-0.5 bg-white rounded-full"></div>
+            <div class="absolute top-64 right-1/4 w-1 h-1 bg-accent-300 rounded-full"></div>
+            <div class="absolute top-80 left-1/3 w-0.5 h-0.5 bg-primary rounded-full"></div>
+            <div class="absolute top-96 right-10 w-1 h-1 bg-white rounded-full"></div>
+            <div class="absolute bottom-32 left-20 w-1 h-1 bg-primary-400 rounded-full shadow-neon"></div>
+            <div class="absolute bottom-20 right-1/3 w-0.5 h-0.5 bg-accent rounded-full"></div>
+            <div class="absolute bottom-40 left-1/2 w-1 h-1 bg-white rounded-full"></div>
+            <div class="absolute bottom-60 right-20 w-0.5 h-0.5 bg-primary-300 rounded-full"></div>
+        </div>
+    </div>
+
+    <!-- Main Game Canvas Container -->
+    <div class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4">
+        <!-- Game Title -->
+        <div class="text-center mb-8 md:mb-12">
+            <h1 class="font-orbitron font-black text-4xl md:text-6xl lg:text-7xl text-primary neon-glow mb-2">
+                FLAPPY
+            </h1>
+            <h2 class="font-orbitron font-black text-3xl md:text-5xl lg:text-6xl text-secondary mb-4">
+                ROCKET
+            </h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-primary via-accent to-secondary mx-auto rounded-full shadow-neon"></div>
+        </div>
+
+        <!-- Rocket Sprite with Particles -->
+        <div class="relative mb-8 md:mb-12">
+            <div class="floating-rocket relative">
+                <!-- Updated Rocket Body -->
+                <svg width="80" height="120" viewBox="0 0 80 120" class="drop-shadow-lg">
+                    <!-- Rocket Main Body with gradient -->
+                    <defs>
+                        <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#CBD5E1;stop-opacity:1"/>
+                            <stop offset="50%" style="stop-color:#F8FAFC;stop-opacity:1"/>
+                            <stop offset="100%" style="stop-color:#CBD5E1;stop-opacity:1"/>
+                        </linearGradient>
+                        <linearGradient id="noseGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#38BDF8;stop-opacity:1"/>
+                            <stop offset="100%" style="stop-color:#0EA5E9;stop-opacity:1"/>
+                        </linearGradient>
+                        <linearGradient id="wingGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1"/>
+                            <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1"/>
+                        </linearGradient>
+                        <radialGradient id="windowGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#67E8F9;stop-opacity:1"/>
+                            <stop offset="70%" style="stop-color:#22D3EE;stop-opacity:1"/>
+                            <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1"/>
+                        </radialGradient>
+                    </defs>
+                    
+                    <!-- Rocket Main Body -->
+                    <ellipse cx="40" cy="30" rx="15" ry="25" fill="url(#bodyGradient)" stroke="#64748B" stroke-width="2"/>
+                    
+                    <!-- Body details -->
+                    <line x1="28" y1="20" x2="52" y2="20" stroke="#94A3B8" stroke-width="1"/>
+                    <line x1="28" y1="30" x2="52" y2="30" stroke="#94A3B8" stroke-width="1"/>
+                    
+                    <!-- Rocket Nose -->
+                    <polygon points="40,5 50,30 30,30" fill="url(#noseGradient)" stroke="#0284C7" stroke-width="2"/>
+                    
+                    <!-- Rocket Wings -->
+                    <polygon points="25,45 15,65 35,55" fill="url(#wingGradient)" stroke="#B91C1C" stroke-width="2"/>
+                    <polygon points="55,45 65,65 45,55" fill="url(#wingGradient)" stroke="#B91C1C" stroke-width="2"/>
+                    
+                    <!-- Rocket Window -->
+                    <circle cx="40" cy="25" r="8" fill="url(#windowGradient)" stroke="#0891B2" stroke-width="2"/>
+                    
+                    <!-- Engine -->
+                    <rect x="32" y="52" width="16" height="15" fill="#1E293B" stroke="#0F172A" stroke-width="1"/>
+                </svg>
+                
+                <!-- Particle Effects -->
+                <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
+                    <div class="particle absolute w-2 h-2 bg-secondary rounded-full shadow-neon-error"></div>
+                    <div class="particle absolute w-1.5 h-1.5 bg-accent rounded-full shadow-neon-accent"></div>
+                    <div class="particle absolute w-1 h-1 bg-primary rounded-full shadow-neon"></div>
+                    <div class="particle absolute w-1.5 h-1.5 bg-secondary-400 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Play Button -->
+        <button id="playButton" onclick="startGame()" class="group relative bg-gradient-to-r from-primary-600 to-primary-400 hover:from-primary-500 hover:to-primary-300 text-background font-orbitron font-bold text-xl md:text-2xl px-12 md:px-16 py-4 md:py-6 rounded-full shadow-neon hover:shadow-neon-strong transition-all duration-300 transform hover:scale-105 active:scale-95 min-h-[44px] min-w-[120px]">
+            <span class="relative z-10">PLAY</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-400 to-primary-200 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+        </button>
+
+        <!-- Game Info -->
+        <div class="mt-8 md:mt-12 text-center space-y-4">
+            <!-- High Score -->
+            <div class="bg-surface-800/50 backdrop-blur-sm border border-primary-800/30 rounded-lg px-6 py-3">
+                <p class="text-text-secondary text-sm md:text-base font-rajdhani">HIGH SCORE</p>
+                <p id="highScore" class="text-primary font-orbitron font-bold text-2xl md:text-3xl">0</p>
+            </div>
+            
+            <!-- Controls -->
+            <div class="bg-surface-800/30 backdrop-blur-sm border border-surface-600/30 rounded-lg px-6 py-4 max-w-sm">
+                <p class="text-text-secondary text-sm md:text-base font-rajdhani mb-2">CONTROLS</p>
+                <div class="flex items-center justify-center space-x-4 text-text-primary">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-surface-600 rounded border border-surface-400 flex items-center justify-center">
+                            <span class="text-xs font-mono">TAP</span>
+                        </div>
+                        <span class="text-sm">or</span>
+                        <div class="w-8 h-8 bg-surface-600 rounded border border-surface-400 flex items-center justify-center">
+                            <span class="text-xs font-mono">⎵</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-text-400 text-xs mt-2">to fly up</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center">
+            <p class="text-text-400 text-xs font-rajdhani">© 2025 Flappy Rocket. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav" />
+    </audio>
+    
+    <audio id="clickSound">
+        <source src="https://www.soundjay.com/misc/sounds/beep-07a.wav" type="audio/wav" />
+    </audio>
+
+    <script>
+        // Game state management
+        let audioInitialized = false;
+        let highScore = localStorage.getItem('flappyRocketHighScore') || 0;
+        
+        // Initialize high score display
+        document.getElementById('highScore').textContent = highScore;
+        
+        // Audio initialization
+        function initializeAudio() {
+            if (!audioInitialized) {
+                const bgMusic = document.getElementById('backgroundMusic');
+                const clickSound = document.getElementById('clickSound');
+                
+                // Set volume levels
+                bgMusic.volume = 0.3;
+                clickSound.volume = 0.5;
+                
+                // Try to play background music
+                bgMusic.play().catch(e => console.log('Audio autoplay prevented'));
+                
+                audioInitialized = true;
+            }
+        }
+        
+        // Play button click handler
+        function startGame() {
+            // Initialize audio on user interaction
+            initializeAudio();
+            
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.play().catch(e => console.log('Click sound failed'));
+            
+            // Add button press effect
+            const playButton = document.getElementById('playButton');
+            playButton.classList.add('scale-95');
+            
+            // Transition to game screen after brief delay
+            setTimeout(() => {
+                window.location.href = 'game_play_screen.html';
+            }, 200);
+        }
+        
+        // Keyboard controls
+        document.addEventListener('keydown', function(event) {
+            if (event.code === 'Space' || event.key === ' ') {
+                event.preventDefault();
+                startGame();
+            }
+        });
+        
+        // Touch/click event for mobile
+        document.addEventListener('touchstart', function(event) {
+            // Only trigger if touching the play button area
+            const playButton = document.getElementById('playButton');
+            const rect = playButton.getBoundingClientRect();
+            const touch = event.touches[0];
+            
+            if (touch.clientX >= rect.left && touch.clientX <= rect.right &&
+                touch.clientY >= rect.top && touch.clientY <= rect.bottom) {
+                event.preventDefault();
+                startGame();
+            }
+        });
+        
+        // Prevent context menu on long press
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+        
+        // Handle visibility change for audio
+        document.addEventListener('visibilitychange', function() {
+            const bgMusic = document.getElementById('backgroundMusic');
+            if (document.hidden) {
+                bgMusic.pause();
+            } else if (audioInitialized) {
+                bgMusic.play().catch(e => console.log('Resume audio failed'));
+            }
+        });
+        
+        // Responsive canvas sizing simulation
+        function updateCanvasSize() {
+            // This would be used for actual canvas implementation
+            const container = document.querySelector('.min-h-screen');
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            
+            // Maintain aspect ratio for game area
+            const gameAspectRatio = 9 / 16; // Mobile-first
+            let gameWidth = width;
+            let gameHeight = height;
+            
+            if (width / height > gameAspectRatio) {
+                gameWidth = height * gameAspectRatio;
+            } else {
+                gameHeight = width / gameAspectRatio;
+            }
+            
+            // Store for game screen
+            sessionStorage.setItem('gameWidth', gameWidth);
+            sessionStorage.setItem('gameHeight', gameHeight);
+        }
+        
+        // Initialize on load
+        window.addEventListener('load', updateCanvasSize);
+        window.addEventListener('resize', updateCanvasSize);
+        
+        // Preload game assets
+        function preloadAssets() {
+            // This would preload game sprites and sounds
+            const assets = [
+                'rocket.png',
+                'pipe.png',
+                'background.png'
+            ];
+            
+            // Simulate asset loading
+            console.log('Preloading game assets...');
+        }
+        
+        // Start preloading
+        preloadAssets();
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

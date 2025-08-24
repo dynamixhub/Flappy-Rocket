@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #00FFFF; /* cyan-400 */
+  --color-primary-50: #ECFEFF; /* cyan-50 */
+  --color-primary-100: #CFFAFE; /* cyan-100 */
+  --color-primary-200: #A5F3FC; /* cyan-200 */
+  --color-primary-300: #67E8F9; /* cyan-300 */
+  --color-primary-400: #22D3EE; /* cyan-400 */
+  --color-primary-500: #06B6D4; /* cyan-500 */
+  --color-primary-600: #0891B2; /* cyan-600 */
+  --color-primary-700: #0E7490; /* cyan-700 */
+  --color-primary-800: #155E75; /* cyan-800 */
+  --color-primary-900: #164E63; /* cyan-900 */
+
+  /* Secondary Colors */
+  --color-secondary: #FF6B35; /* orange-500 */
+  --color-secondary-50: #FFF7ED; /* orange-50 */
+  --color-secondary-100: #FFEDD5; /* orange-100 */
+  --color-secondary-200: #FED7AA; /* orange-200 */
+  --color-secondary-300: #FDBA74; /* orange-300 */
+  --color-secondary-400: #FB923C; /* orange-400 */
+  --color-secondary-500: #F97316; /* orange-500 */
+  --color-secondary-600: #EA580C; /* orange-600 */
+  --color-secondary-700: #C2410C; /* orange-700 */
+  --color-secondary-800: #9A3412; /* orange-800 */
+  --color-secondary-900: #7C2D12; /* orange-900 */
+
+  /* Accent Colors */
+  --color-accent: #FFFF00; /* yellow-400 */
+  --color-accent-50: #FEFCE8; /* yellow-50 */
+  --color-accent-100: #FEF9C3; /* yellow-100 */
+  --color-accent-200: #FEF08A; /* yellow-200 */
+  --color-accent-300: #FDE047; /* yellow-300 */
+  --color-accent-400: #FACC15; /* yellow-400 */
+  --color-accent-500: #EAB308; /* yellow-500 */
+  --color-accent-600: #CA8A04; /* yellow-600 */
+  --color-accent-700: #A16207; /* yellow-700 */
+  --color-accent-800: #854D0E; /* yellow-800 */
+  --color-accent-900: #713F12; /* yellow-900 */
+
+  /* Background Colors */
+  --color-background: #0A0A0F; /* slate-900 */
+  --color-background-50: #F8FAFC; /* slate-50 */
+  --color-background-100: #F1F5F9; /* slate-100 */
+  --color-background-200: #E2E8F0; /* slate-200 */
+  --color-background-300: #CBD5E1; /* slate-300 */
+  --color-background-400: #94A3B8; /* slate-400 */
+  --color-background-500: #64748B; /* slate-500 */
+  --color-background-600: #475569; /* slate-600 */
+  --color-background-700: #334155; /* slate-700 */
+  --color-background-800: #1E293B; /* slate-800 */
+  --color-background-900: #0F172A; /* slate-900 */
+
+  /* Surface Colors */
+  --color-surface: #1A1A2E; /* indigo-900 */
+  --color-surface-50: #EEF2FF; /* indigo-50 */
+  --color-surface-100: #E0E7FF; /* indigo-100 */
+  --color-surface-200: #C7D2FE; /* indigo-200 */
+  --color-surface-300: #A5B4FC; /* indigo-300 */
+  --color-surface-400: #818CF8; /* indigo-400 */
+  --color-surface-500: #6366F1; /* indigo-500 */
+  --color-surface-600: #4F46E5; /* indigo-600 */
+  --color-surface-700: #4338CA; /* indigo-700 */
+  --color-surface-800: #3730A3; /* indigo-800 */
+  --color-surface-900: #312E81; /* indigo-900 */
+
+  /* Text Colors */
+  --color-text-primary: #FFFFFF; /* white */
+  --color-text-secondary: #B0B0B0; /* gray-400 */
+  --color-text-50: #F9FAFB; /* gray-50 */
+  --color-text-100: #F3F4F6; /* gray-100 */
+  --color-text-200: #E5E7EB; /* gray-200 */
+  --color-text-300: #D1D5DB; /* gray-300 */
+  --color-text-400: #9CA3AF; /* gray-400 */
+  --color-text-500: #6B7280; /* gray-500 */
+  --color-text-600: #4B5563; /* gray-600 */
+  --color-text-700: #374151; /* gray-700 */
+  --color-text-800: #1F2937; /* gray-800 */
+  --color-text-900: #111827; /* gray-900 */
+
+  /* Success Colors */
+  --color-success: #00FF88; /* emerald-400 */
+  --color-success-50: #ECFDF5; /* emerald-50 */
+  --color-success-100: #D1FAE5; /* emerald-100 */
+  --color-success-200: #A7F3D0; /* emerald-200 */
+  --color-success-300: #6EE7B7; /* emerald-300 */
+  --color-success-400: #34D399; /* emerald-400 */
+  --color-success-500: #10B981; /* emerald-500 */
+  --color-success-600: #059669; /* emerald-600 */
+  --color-success-700: #047857; /* emerald-700 */
+  --color-success-800: #065F46; /* emerald-800 */
+  --color-success-900: #064E3B; /* emerald-900 */
+
+  /* Warning Colors */
+  --color-warning: #FFB800; /* amber-500 */
+  --color-warning-50: #FFFBEB; /* amber-50 */
+  --color-warning-100: #FEF3C7; /* amber-100 */
+  --color-warning-200: #FDE68A; /* amber-200 */
+  --color-warning-300: #FCD34D; /* amber-300 */
+  --color-warning-400: #FBBF24; /* amber-400 */
+  --color-warning-500: #F59E0B; /* amber-500 */
+  --color-warning-600: #D97706; /* amber-600 */
+  --color-warning-700: #B45309; /* amber-700 */
+  --color-warning-800: #92400E; /* amber-800 */
+  --color-warning-900: #78350F; /* amber-900 */
+
+  /* Error Colors */
+  --color-error: #FF3366; /* rose-500 */
+  --color-error-50: #FFF1F2; /* rose-50 */
+  --color-error-100: #FFE4E6; /* rose-100 */
+  --color-error-200: #FECDD3; /* rose-200 */
+  --color-error-300: #FDA4AF; /* rose-300 */
+  --color-error-400: #FB7185; /* rose-400 */
+  --color-error-500: #F43F5E; /* rose-500 */
+  --color-error-600: #E11D48; /* rose-600 */
+  --color-error-700: #BE123C; /* rose-700 */
+  --color-error-800: #9F1239; /* rose-800 */
+  --color-error-900: #881337; /* rose-900 */
+}
+
+/* Custom Animations */
+@keyframes neon-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  }
+}
+
+@keyframes score-bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes particle-burst {
+  0% { 
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% { 
+    transform: scale(1.5) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Custom Utility Classes */
+.neon-glow {
+  animation: neon-glow 2s ease-in-out infinite;
+}
+
+.score-bounce {
+  animation: score-bounce 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.particle-burst {
+  animation: particle-burst 0.5s ease-out forwards;
+}
+
+.game-transition {
+  transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.smooth-transition {
+  transition: all 0.3s ease-out;
+}
