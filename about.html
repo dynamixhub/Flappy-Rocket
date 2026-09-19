@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Flappy Rocket</title>
+  <meta name="description" content="About Flappy Rocket, a space dodger arcade game by Dynamix Studio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-top: #0d0a24;
+      --bg-mid: #2b2159;
+      --accent: #7c5cff;
+      --accent-light: #a98bff;
+      --text: #f5f3ff;
+      --text-dim: #b7b0d9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 100%);
+      color: var(--text);
+      font-family: 'Rajdhani', sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 48px 20px 80px;
+    }
+    .page { max-width: 640px; width: 100%; }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.8rem, 6vw, 2.6rem);
+      margin: 0 0 8px;
+    }
+    h1 span { color: var(--accent-light); }
+    .eyebrow {
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin: 0 0 6px;
+    }
+    p { font-size: 1.08rem; line-height: 1.6; color: var(--text-dim); }
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.15rem;
+      color: #fff;
+      margin: 32px 0 10px;
+    }
+    .studio-card {
+      margin-top: 10px;
+      padding: 18px 22px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.06);
+      border-left: 3px solid var(--accent);
+    }
+    .studio-card strong { color: #fff; }
+    a.back {
+      display: inline-block;
+      margin-top: 36px;
+      color: var(--accent-light);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a.back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <p class="eyebrow">About</p>
+    <h1>Flappy <span>Rocket</span></h1>
+    <p>
+      Flappy Rocket is a quick-reflex space dodger: pilot a rocket through
+      a scrolling field of energy pylons without clipping your wings. One
+      tap, one rule — survive as long as you can and chase your best
+      distance.
+    </p>
+
+    <h2>Made by</h2>
+    <div class="studio-card">
+      <p style="margin:0;"><strong>Dynamix Studio</strong> — this game was designed and built by Dynamix Studio.</p>
+    </div>
+
+    <h2>How to play</h2>
+    <p>
+      Tap the screen, click, or press Space / the Up arrow to thrust.
+      Gravity pulls your rocket down constantly, so timing each thrust is
+      what keeps you threading the gaps. The field gets tighter and
+      faster the longer you survive.
+    </p>
+
+    <a class="back" href="../index.html">← Back to the game</a>
+  </div>
+</body>
+</html>
